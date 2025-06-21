@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="pt"> <!-- Página de login -->
+
+<head>
+    <title>ObraGest - Login</title>
+    <meta chatset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div>
+        <h1>ObraGest</h1>
+        <p class="subtitle">Acesse a sua conta</p>
+
+        <form id="loginForm">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <div id="mensagemErro" class="erro"></div>
+    </div>
+
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>

@@ -3,12 +3,80 @@
 <html lang="pt">  <!-- Página do controle de obras -->
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Controle de Obras</title>
+    <title>ObraGest - Obras</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    
+    <main class="page">
+        <h1>Cadastro de Obras</h1>
+
+        <div class="obras">
+            <div class="obras-header">
+                <button class="button-add">+ Nova Obra</button>
+                <input type="text" placeholder="Pesquisar obras" class="search-input">
+            </div>
+        </div>
+
+        <table class="obras-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome da Obra</th>
+                <th>Endereço</th>
+                <th>Data de Início</th>
+                <th>Data Prevista de Término</th> <!-- centralizar os dados do head e body -->
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>001</td>
+                <td>Teste Obra</td>
+                <td>Teste Endereço</td>
+                <td>01/01/2023</td>
+                <td>31/12/2025</td>
+                <td>Em andamento</td>
+                <td>
+                <button class="button-editar">Editar</button>
+                <button class="button-excluir">Excluir</button>
+                </td>
+            </tr>
+            <!-- adicionar mais linhas dinamicamente -->
+            </tbody>
+        </table>        
+
+        <!-- formulário para novas obras ---- adicionar em outra tela
+        <h2>Nova Obra</h2>
+        <form id="formObra">
+            <input type="hidden" id="idObra">
+            <label>Nome da Obra</label>
+            <input type="text" id="nome" required>
+
+            <label>Endereço</label>
+            <input type="text" id="endereco" required>
+
+            <label>Data de Início</label>
+            <input type="date" id="dataInicio" required>
+
+            <label>Data Prevista de Término</label>
+            <input type="date" id="dataFim">
+
+            <label>Status</label>
+            <select id="status">
+                <option value="Planejada">Planejada</option>
+                <option value="Em andamento">Em Andamento</option>
+                <option value="Concluída">Concluída</option>
+            </select>
+
+            <button type="submit">Salvar</button>
+        -->
+
+    </main>
+
+    <!-- <script src="./js/obras.js"></script> -->
 </body>
 
 </html>

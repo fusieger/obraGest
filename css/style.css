@@ -1,60 +1,194 @@
-/*Estilo do aplicativo*/
-
-body{
-    font-family: 'Helvetica', sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+ 
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
-.login-container{
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+.login {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.login-container{
-    margin-bottom: 10px;
+.login h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: #0007cc;
 }
 
-.subtitle{
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-input{
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+input,
+select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-button{
-    padding: 10px;
-    background-color: #0007cc;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+button {
+  padding: 10px;
+  background-color: #0007cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-button:hover{
-    background-color: #005fa3;
+button:hover {
+  background-color: #005fa3;
 }
 
-.erro{
-    color: red;
-    margin-top: 10px;
-    font-size: 14px;
+.erro {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 400px){
+    .login{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login img{
+        width: 150px;
+    }
+}
+
+/* adicionado após obras.html */
+
+.page {
+  width: 90%;
+  max-width: 960px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.page h1 {
+  text-align: center;
+  color: #0007cc;
+  margin-bottom: 20px;
+}
+
+.obras {   /*alterar nomenclaturas de obras para algo mais genérico para fazer sentido o uso nos arquivos das demais páginas*/
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.obras-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+.button-add {
+  background-color: #28a745;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-add:hover {
+  background-color: #218838;
+}
+
+.obras-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.obras-table th,
+.obras-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.obras-table th {
+  background-color: #0007cc;
+  color: white;
+}
+
+.button-editar {
+  background-color: #ffc107;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  color: #000;
+  cursor: pointer;
+}
+
+.button-excluir {
+  background-color: #dc3545;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.button-editar:hover {
+  background-color: #e0a800;
+}
+
+.button-excluir:hover {
+  background-color: #c82333;
+}
+
+/*adicionado após financeiro*/
+
+.button-rmv {
+  background-color: #f80505;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }

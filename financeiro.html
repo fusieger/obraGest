@@ -3,11 +3,50 @@
 <html lang="pt">  <!-- Página de controle financeiro -->
 
 <head>
-    <meta charset="UTF-8" />
     <title>Financeiro</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <main class="page">
+        <h1>Movimentações Financeiras</h1>
+
+        <div class="obras">
+            <div class="obras-header">
+                <button class="button-add">+ Entrada</button>
+                <button class="button-rmv">- Saída</button>
+                <input type="text" placeholder="Pesquisar obras" class="search-input">
+            </div>
+        </div>
+
+        <table class="obras-table">
+            <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Obra</th> <!-- centralizar os dados do head e body -->
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Entrada</td>
+                <td>Venda</td>
+                <td>R$100.000,00</td>
+                <td>01/01/2023</td>
+                <td>Ed. Itália</td>
+                <td>
+                <button class="button-editar">Editar</button>
+                <button class="button-excluir">Excluir</button>
+                </td>
+            </tr>
+            <!-- adicionar mais linhas dinamicamente -->
+            </tbody>
+        </table>        
+
     
 </body>
 

@@ -3,12 +3,45 @@
 <html lang="pt"> <!-- Página do controle de materiais -->
 
 <head>
-    <meta charset="UTF-8" />
-    <title>´Pedidos de materiais</title>
+    <title>´Pedidos de materiais</title>  <!-- adicionar uma página para consultar os pedidos -->
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    
+    <main>
+    <h2>Cadastro de pedido</h2>
+    <form id="formPedido">
+        <input type="hidden" id="nomeObra"> <!-- pesquisar as obras -->
+        <label>Nome da Obra</label>
+        <input type="text" id="nome" required>
+
+        <label>Tipo de Material</label>
+        <select>
+            <option value="Concreto">Concreto</option>
+            <option value="Aço">Aço</option>
+            <option value="Areia">Areia</option>
+            <option value="Materiais">Materiais</option> <!-- aumentar a lista -->
+        </select>
+
+        <label>Fornecedor</label>
+        <input type="text" id="fornecedor" required> <!-- pesquisar no cadastro de fornecedores -->
+
+        <label>Data do Pedido</label>
+        <input type="date" id="dataPedido" required>
+
+        <label>Data de entrega prevista</label>
+        <input type="date" id="dataEntrega">
+
+        <label>Status</label>
+        <select id="status">
+            <option value="Pedido Realizado">Pedido Realizado</option>
+            <option value="Pedido Confirmado">Pedido Confirmado</option>
+            <option value="Pedido Entregue">Pedido Entregue</option>
+        </select>
+
+        <button type="submit">Salvar</button>
+    </main>    
 </body>
 
 </html>

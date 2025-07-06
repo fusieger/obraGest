@@ -1,23 +1,20 @@
-body.login-page {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
   font-family: 'Helvetica', sans-serif;
   background-color: #f2f2f2;
+  color: #333;
+}
+
+/*Login*/
+body.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-}
-
-body:not(.login-page) {
-  display: block;
-  justify-content: initial;
-  align-items: initial;
-  height: auto;
-}
- 
-.logo {
-    display: block;
-    margin: 0 auto 20px auto;
 }
 
 .login {
@@ -28,223 +25,36 @@ body:not(.login-page) {
   width: 350px;
   max-height: 90vh;
   overflow-y: auto;
+  text-align: center;
 }
 
 .login h1 {
   margin-bottom: 20px;
-  text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #0007cc;
 }
 
 .subtitle {
+  margin-bottom: 20px;
+  font-size: 0.875rem;
   color: #666;
-  font-size: 14px;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input,
-select {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-button {
-  padding: 10px;
-  background-color: #0007cc;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-
-.erro {
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
-  text-align: center;
-}
-
-@media (max-width: 400px){
-    .login{
-        width: 90%;
-        padding: 20px;
-    }
-
-    .login img{
-        width: 150px;
-    }
-}
-
-/* adicionado após obras.html */
-
-.page {
-  width: 90%;
-  max-width: 1200px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  padding-bottom: 40px
-}
-
-.page h1 {
-  text-align: center;
-  color: #0007cc;
-  margin-bottom: 20px;
-}
-
-.obras {   /*alterar nomenclaturas de obras para algo mais genérico para fazer sentido o uso nos arquivos das demais páginas*/
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.obras-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.search-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  min-width: 200px;
-}
-
-.button-add {
-  background-color: #28a745;
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 8px;
-}
-
-.button-add:hover {
-  background-color: #218838;
-}
-
-.obras-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.obras-table th,
-.obras-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
+.login label {
   text-align: left;
-  font-size: 14px;
-}
-
-.obras-table th {
-  background-color: #0007cc;
-  color: white;
-}
-
-.button-editar {
-  background-color: #ffc107;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  margin-right: 5px;
-  color: #000;
-  cursor: pointer;
-}
-
-.button-excluir {
-  background-color: #dc3545;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-}
-
-.button-editar:hover {
-  background-color: #e0a800;
-}
-
-.button-excluir:hover {
-  background-color: #c82333;
-}
-
-/*adicionado após financeiro*/
-
-.button-rmv {
-  background-color: #f80505;
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: none;
-  color: white;
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  cursor: pointer;
 }
 
-.button-rmv:hover{
-  background-color: #c82333;
-}
-
-.financeiro-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.financeiro-table th,
-.financeiro-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
-  font-size: 14px;
-}
-
-.financeiro-table th {
-  background-color: #0007cc;
-  color: white;
-}
-
-.financeiro { 
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.financeiro-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/*adicionado após correções na página de login*/
+/*Header*/
 .header {
   width: 100%;
-  background: #0007cc;
+  background-color: #0007cc;
   color: white;
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -274,50 +84,148 @@ button:hover {
 
 #logoutBtn {
   background-color: #dc3545;
+  color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  #logoutBtn {
-    padding: 6px 10px;
-    font-size: 0.9rem;
-  }
-}
-
 #logoutBtn:hover {
   background-color: #c82333;
 }
 
-/*inclusão de cointainer de boas vindas*/
+/*Página genérica*/
+.page {
+  width: 90%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.page h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #0007cc;
+  text-align: center;
+}
+
+/*Formulários e inputs*/
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+/*Botões*/
+button {
+  font-size: 0.875rem;
+}
+
+.button-add,
+.button-editar,
+.button-excluir {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-add {
+  background-color: #28a745;
+  color: white;
+  margin-right: 8px;
+}
+
+.button-add:hover {
+  background-color: #218838;
+}
+
+.button-editar {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.button-editar:hover {
+  background-color: #e0a800;
+}
+
+.button-excluir {
+  background-color: #dc3545;
+  color: white;
+}
+
+.button-excluir:hover {
+  background-color: #c82333;
+}
+
+/*Campo de busca*/
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  min-width: 200px;
+}
+
+/*Tabelas de dados*/
+.obras-table,
+.financeiro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.obras-table th,
+.obras-table td,
+.financeiro-table th,
+.financeiro-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.obras-table th,
+.financeiro-table th {
+  background-color: #0007cc;
+  color: white;
+}
+
+/*Dashboard cards*/
 .welcome-banner {
-  background: white;
+  background-color: white;
   border-radius: 8px;
   padding: 20px;
-  max-width: 800px;
-  margin: 20px auto;
+  margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
+
 .welcome-banner h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #0007cc;
 }
 
-/*inclusão de métricas no dashboard*/
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 960px;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
 .card {
-  background: white;
+  background-color: white;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -326,27 +234,23 @@ button:hover {
 
 .card h2 {
   margin: 0 0 10px;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #0007cc;
 }
 
 .card p {
   margin: 0;
   font-size: 1rem;
-  color: #333;
 }
 
-/*alterações no financeiro*/
-.obras-table th,
-.obras-table td {
-  text-align: center;
-}
-
-/*cadastro/edição */
+/*Modal genérico*/
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,31 +261,18 @@ button:hover {
 }
 
 .modal-content {
-  background: white;
+  background-color: white;
   border-radius: 8px;
   padding: 20px;
-  width: 320px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .modal-content h2 {
   margin-top: 0;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #0007cc;
-}
-
-.modal-content form label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-}
-
-.modal-content form input,
-.modal-content form select {
-  width: 100%;
-  padding: 6px;
-  margin-top: 4px;
-  box-sizing: border-box;
 }
 
 .modal-actions {
@@ -391,28 +282,17 @@ button:hover {
   margin-top: 15px;
 }
 
-.modal-actions button {
-  padding: 10px 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Estilo do botão Salvar (já era .button-add) */
-.modal-actions .button-add {
-  background-color: #28a745;
-  color: white;
-}
-.modal-actions .button-add:hover {
-  background-color: #218838;
-}
-
-/* Estilo do botão Cancelar */
-.modal-actions .button-excluir {
-  background-color: #dc3545;
-  color: white;
-}
-.modal-actions .button-excluir:hover {
-  background-color: #c82333;
+/*Responsividade*/
+@media (max-width: 600px) {
+  .login,
+  .page {
+    width: 90%;
+    padding: 15px;
+  }
+  .header {
+    flex-wrap: wrap;
+  }
+  .nav {
+    margin: 10px 0;
+  }
 }

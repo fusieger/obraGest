@@ -95,11 +95,12 @@ button:hover {
 
 .page {
   width: 90%;
-  max-width: 960px;
+  max-width: 1200px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
+  margin: 0 auto;
+  padding-bottom: 40px
 }
 
 .page h1 {
@@ -208,21 +209,33 @@ button:hover {
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
+
 .header .logo-small {
   height: 40px;
 }
+
 .nav {
   flex: 1;
   display: flex;
   gap: 15px;
   margin-left: 20px;
 }
+
 .nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: opacity 0.2s;
 }
+
+.nav a:hover {
+  opacity: 0.8;
+}
+
 #logoutBtn {
   background-color: #dc3545;
   border: none;
@@ -230,6 +243,59 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  #logoutBtn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
 #logoutBtn:hover {
   background-color: #c82333;
+}
+
+/*inclusão de cointainer de boas vindas*/
+.welcome-banner {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.welcome-banner h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0007cc;
+}
+
+/*inclusão de métricar no dashboard*/
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  color: #0007cc;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
 }

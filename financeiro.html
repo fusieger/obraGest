@@ -3,54 +3,82 @@
 <html lang="pt">  <!-- Página de controle financeiro -->
 
 <head>
-    <title>Financeiro</title>
+    <title>ObraGest - Financeiro</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="./js/session-check.js"></script>
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>  <!-- Carregar o cabeçalho -->
 
-    <main class="page">
+    <main class="page">  <!-- Conteúdo da página -->
+
         <h1>Movimentações Financeiras</h1>
 
-        <div class="obras">
-            <div class="obras-header">
-                <button class="button-add">+ Entrada</button>
-                <button class="button-rmv">- Saída</button>
-                <input type="text" placeholder="Pesquisar obras" class="search-input">
+        <div class="financeiro">  <!-- Adicionar movimentação e filtro de pesquisa -->
+            <div class="financeiro-header">
+                <button id="btnAddMovimento" class="button-add">+ Movimento</button>
+                <input type="text" placeholder="Pesquisar lançamentos" class="search-input" id="searchInput">
             </div>
         </div>
 
-        <table class="obras-table">     <!-- adicionar filtro de ordenação na tabela -->
+        <table id="lancamentosTable" class="financeiro-table">  <!-- Tabela de lançamentos -->
             <thead>
-            <tr>
-                <th>Obra</th>
-                <th>Tipo</th>
-                <th>Data</th>
-                <th>Valor</th>
-                <th>Descrição</th> <!-- centralizar os dados do head e body -->
-                <th>Ações</th>
-            </tr>
+                <tr>
+                    <th>Obra</th>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>  <!-- atualizar para centralizar os dados na exibição da tabela! -->
+                    <th>Ações</th>
+                </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>Ed. Itália</td>
-                <td>Entrada</td>
-                <td>01/01/2023</td>
-                <td>R$100.000,00</td>
-                <td>Parcela de entrada</td>
-                <td>
-                <button class="button-editar">Editar</button>
-                <button class="button-excluir">Excluir</button>
-                </td>
-            </tr>
-            <!-- adicionar mais linhas dinamicamente -->
+            <tbody>  <!-- adicionar linhas dinamicamente via JS -->
+                <tr>
+                </tr>
             </tbody>
-        </table>        
+        </table>
+    </main>
+
+    <div id="modalLancamento" class="modal-overlay hidden">  <!-- Modal para incluir/editar lançamentos -->
+        <div class="modal-content">
+            
+            <h2 id="modalTitle">Novo Lançamento</h2>
+
+            <form id="formLancamento">
+                <label>
+                Obra:
+                <input type="text" id="obraInput" required>
+                </label>
+                <label>
+                Tipo:
+                <select id="tipoInput">
+                    <option value="Entrada">Entrada</option>
+                    <option value="Saída">Saída</option>
+                </select>
+                </label>
+                <label>
+                Data:
+                <input type="date" id="dataInput" required>
+                </label>
+                <label>
+                Valor:
+                <input type="number" id="valorInput" step="0.01" required>
+                </label>
+                <label>
+                Descrição:
+                <input type="text" id="descricaoInput">
+                </label>
+                <div class="modal-actions">
+                <button type="submit" class="button-add">Salvar</button>
+                <button type="button" id="btnCancel" class="button-excluir">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="./js/header.js"></script>
+    <script src="./js/financeiro.js"></script>
 
 </body>
 

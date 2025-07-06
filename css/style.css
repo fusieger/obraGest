@@ -137,6 +137,7 @@ button:hover {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin: 8px;
 }
 
 .button-add:hover {
@@ -198,6 +199,41 @@ button:hover {
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+.button-rmv:hover{
+  background-color: #c82333;
+}
+
+.financeiro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.financeiro-table th,
+.financeiro-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.financeiro-table th {
+  background-color: #0007cc;
+  color: white;
+}
+
+.financeiro { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.financeiro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /*adicionado após correções na página de login*/
@@ -271,7 +307,7 @@ button:hover {
   color: #0007cc;
 }
 
-/*inclusão de métricar no dashboard*/
+/*inclusão de métricas no dashboard*/
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -298,4 +334,85 @@ button:hover {
   margin: 0;
   font-size: 1rem;
   color: #333;
+}
+
+/*alterações no financeiro*/
+.obras-table th,
+.obras-table td {
+  text-align: center;
+}
+
+/*cadastro/edição */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #0007cc;
+}
+
+.modal-content form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.modal-content form input,
+.modal-content form select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Estilo do botão Salvar (já era .button-add) */
+.modal-actions .button-add {
+  background-color: #28a745;
+  color: white;
+}
+.modal-actions .button-add:hover {
+  background-color: #218838;
+}
+
+/* Estilo do botão Cancelar */
+.modal-actions .button-excluir {
+  background-color: #dc3545;
+  color: white;
+}
+.modal-actions .button-excluir:hover {
+  background-color: #c82333;
 }

@@ -10,49 +10,71 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>  <!-- Cabeçalho -->
 
-    <main class="page">
+    <main class="page">  <!-- Conteúdo da página -->
+
         <h1>Cadastro de Obras</h1>
 
-        <div class="obras">
-            <div class="obras-header">
-                <a href="novaobra.html" class="button-add">+ Nova Obra</a> <!-- fazer um pop up para a tela de cadastro? -->
-                <input type="text" placeholder="Pesquisar obras" class="search-input">
-            </div>
+        <div class="obras-header">  <!-- Adicionar obra e filtro de pesquisa -->
+            <button id="btnAddObra" class="button-add">+ Nova Obra</button>
+            <input type="text" id="searchObraInput" placeholder="Pesquisar obras" class="search-input">
         </div>
 
-        <table class="obras-table">
+        <table id="obrasTable" class="obras-table">  <!-- Tabela de obras -->
             <thead>
             <tr>
                 <th>Nome da Obra</th>
                 <th>Endereço</th>
                 <th>Data de Início</th>
-                <th>Data Prevista de Término</th> <!-- centralizar os dados do head e body -->
+                <th>Data Prevista de Término</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>Teste Obra</td>
-                <td>Teste Endereço</td>
-                <td>01/01/2023</td>
-                <td>31/12/2025</td>
-                <td>Em andamento</td>
-                <td>
-                <button class="button-editar">Editar</button>
-                <button class="button-excluir">Excluir</button>
-                </td>
-            </tr>
-            <!-- adicionar mais linhas dinamicamente -->
+            <tbody>  <!-- adicionar linhas dinamicamente via JS -->
+                <tr>
+                </tr>
             </tbody>
         </table>        
 
     </main>
 
+    <div id="modalObra" class="modal-overlay hidden">  <!-- Modal para incluir/editar lançamentos -->
+        <div class="modal-content">
+            <h2 id="modalObraTitle">Nova Obra</h2>
+            <form id="formObra">   <!-- campo oculto só para manter padrão, se quiser usar ID -->
+            <input type="hidden" id="obraId">
+            <label>Nome da Obra:
+                <input type="text" id="nomeInput" required>
+            </label>
+            <label>Endereço:
+                <input type="text" id="enderecoInput" required>
+            </label>
+            <label>Data de Início:
+                <input type="date" id="dataInicioInput" required>
+            </label>
+            <label>Data de Término:
+                <input type="date" id="dataFimInput">
+            </label>
+            <label>Status:
+                <select id="statusInput">
+                <option value="Planejada">Planejada</option>
+                <option value="Em andamento">Em andamento</option>
+                <option value="Concluída">Concluída</option>
+                </select>
+            </label>
+
+            <div class="modal-actions">
+                <button type="submit" class="button-add">Salvar</button>
+                <button type="button" id="btnCancelObra" class="button-excluir">Cancelar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
     <script src="./js/header.js"></script>
-    <!-- <script src="./js/obras.js"></script> -->
+    <script src="./js/obras.js"></script>
 </body>
 
 </html>

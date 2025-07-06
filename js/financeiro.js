@@ -1,5 +1,9 @@
 //Referências aos elementos
 document.addEventListener('DOMContentLoaded', () => {
+  //Ler obras do banco provisório(localStorage) e filtra ativas
+  const obras = JSON.parse(localStorage.getItem('obras')) || [];
+  const obrasAtivas = obras.filter(o => o.status !== 'Concluída');  
+
   const tableBody       = document.querySelector('#lancamentosTable tbody');
   const btnAddMovimento = document.getElementById('btnAddMovimento');
   const modal           = document.getElementById('modalLancamento');
@@ -8,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCancel       = document.getElementById('btnCancel');
 
   let editRow = null; //armazena a tr que está em edição
+
+  obrasAtivas.forEach(o => {  // popula <select> de obras
+    const opt = document.createElement('option');
+    opt.value = o.id;
+    opt.textContent = o.nome;
+    obraSelect.appendChild(opt);
+  });
 
 //Abre modal para criar lançamento
 function openModal(tipo, row) {
@@ -48,7 +59,8 @@ btnAddMovimento.addEventListener('click', () => openModal('Movimento'));
 //Submissão do formulário
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const obra  = form.obraInput.value;
+  const obraId   = obraSelect.value;
+  const obraName = obraSelect.selectedOptions[0].textContent;
   const tipo  = form.tipoInput.value;
   const dataObj = form.dataInput.valueAsDate;
   const data    = dataObj.toLocaleDateString('pt-BR');
@@ -57,7 +69,8 @@ form.addEventListener('submit', e => {
 
   if (editRow) {
     //Atualiza linha existente
-    editRow.cells[0].textContent = obra;
+    editRow.dataset.obraId = obraId;
+    editRow.cells[0].textContent = obraName;
     editRow.cells[1].textContent = tipo;
     editRow.cells[2].textContent = data;
     editRow.cells[3].textContent = valor;
@@ -65,8 +78,9 @@ form.addEventListener('submit', e => {
   } else {
     //Cria nova linha
     const tr = document.createElement('tr');
+    tr.dataset.obraId = obraId;
     tr.innerHTML = `
-      <td>${obra}</td>
+      <td>${obraName}</td>
       <td>${tipo}</td>
       <td>${data}</td>
       <td>${valor}</td>

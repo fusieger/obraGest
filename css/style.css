@@ -1,4 +1,4 @@
-body {
+body.login-page {
   font-family: 'Helvetica', sans-serif;
   background-color: #f2f2f2;
   display: flex;
@@ -6,6 +6,13 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+}
+
+body:not(.login-page) {
+  display: block;
+  justify-content: initial;
+  align-items: initial;
+  height: auto;
 }
  
 .logo {
@@ -90,7 +97,6 @@ button:hover {
   width: 90%;
   max-width: 960px;
   background-color: white;
-  padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: auto;
@@ -191,4 +197,39 @@ button:hover {
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+/*adicionado após correções na página de login*/
+.header {
+  width: 100%;
+  background: #0007cc;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.header .logo-small {
+  height: 40px;
+}
+.nav {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+#logoutBtn {
+  background-color: #dc3545;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#logoutBtn:hover {
+  background-color: #c82333;
 }

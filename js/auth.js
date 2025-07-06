@@ -1,26 +1,27 @@
 /*Autenticação*/
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+  const mensagemErro = document.getElementById('mensagemErro');
 
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
+  //exemplo de dados(para teste)
+  const credenciais = {
+    email: 'admin@obragest.com',
+    senha: '123456'
+  };
 
-  fetch("/api/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, senha })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.sucesso) {
-      localStorage.setItem("token", data.token);
-      window.location.href = "dashboard.html";
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value;
+
+    if (email === credenciais.email && senha === credenciais.senha) {
+      //autenticação bem sucedida: salva flag de sessão e redireciona
+      sessionStorage.setItem('userEmail', email);
+      window.location.href = 'dashboard.html';
     } else {
-      document.getElementById("mensagemErro").textContent = "E-mail ou senha inválidos.";
+      //exibe mensagem de erro
+      mensagemErro.textContent = 'E-mail ou senha inválidos.';
     }
-  })
-  .catch(() => {
-    document.getElementById("mensagemErro").textContent = "Erro ao conectar com o servidor.";
   });
 });
